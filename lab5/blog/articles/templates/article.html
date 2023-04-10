@@ -1,0 +1,21 @@
+<head> <link rel="stylesheet" href="{{ STATIC_URL }}/static/css/article.css"> </head>
+<title>"Cтатья"</title>
+
+<body>
+    <div class="header">
+        <div class="archive-button">
+            <a href="http://127.0.0.1:8000/archive">Все статьи</a>
+        </div>
+        <img src="{{ STATIC_URL }}/static/img/logo.png" />
+    </div>
+    <div class="article">
+        <div class="one-post">
+            <h2 class="post-title">{{ post.title }}</h2>
+            <div class="article-info">
+                <div class="article-author">{{ post.author.username }}</div>
+                <div class="article-created-date">{{ post.created_date }}</div>
+            </div>
+            <p class="article-text">{{ post.text }}</p>
+        </div>
+    </div>
+</body>

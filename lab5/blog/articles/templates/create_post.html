@@ -1,0 +1,16 @@
+<head> <link rel="stylesheet" href="{{ STATIC_URL }}/static/css/article.css"> </head>
+<title>Django Public Blog - создать статью</title>
+
+<body>
+    <div class="content">
+        <h1> Написать статью</h1>
+        <form method="POST">{% csrf_token %}
+            <input class="input-title" type="text" name="title" placeholder="Название статьи" value="{{ form.title }}">
+            <h2>
+                <textarea class="input-text" name="text" placeholder="Текст статьи">{{ form.text }}</textarea>
+            </h2>
+            <input class="submit" type="submit" value="Сохранить">
+        </form>
+        {{ form.errors }}
+    </div>
+</body>
