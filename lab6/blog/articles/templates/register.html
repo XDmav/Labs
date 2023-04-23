@@ -1,0 +1,19 @@
+<head> <link rel="stylesheet" href="{{ STATIC_URL }}/static/css/style.css"> </head>
+<title>Регистрация</title>
+
+<body>
+    <div class="content">
+        <h1>Регистрация</h1>
+        <form method="POST">{% csrf_token %}
+            <input class="input-title" type="text" name="login" placeholder="Логин" value="{{ form.login }}">
+            <h2>
+                <input class="input-title" type="text" name="email" placeholder="Почта" value="{{ form.email }}">
+            </h2>
+            <h2>
+                <input class="input-title" type="text" name="password" placeholder="Пароль" value="{{ form.password }}">
+            </h2>
+            <input class="submit" type="submit" value="Зарегистрироваться">
+        </form>
+        {{ form.errors }}
+    </div>
+</body>
